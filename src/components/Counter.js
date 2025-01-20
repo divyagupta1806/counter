@@ -10,8 +10,7 @@ const Counter = ({ counter, increment, decrement }) => {
     localStorage.setItem("counter", counter);
   }, [counter]);
 
-  //   localStorage.removeItem("counter", counter);
-  // }, [counter]);
+  
 
   useEffect(() => {
     console.log("counter");
