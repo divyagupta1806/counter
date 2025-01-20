@@ -1,7 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 const initialState = {
-  counter: +localStorage.getItem("counter") || 0,
-  users: [],
+  counter:
+    typeof window !== "undefined" ? +localStorage.getItem("counter") || 0 : 0,
+  users:
+    typeof window !== "undefined" && localStorage.getItem("users")
+      ? JSON.parse(localStorage.getItem("users"))
+      : [],
 };
 
 const INCREMENT = "INCREMENT";
